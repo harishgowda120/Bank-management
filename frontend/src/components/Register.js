@@ -15,7 +15,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('http://localhost:5000/api/users/register', formData);
+      const { data } = await axios.post('https://bank-management-4tyl.onrender.com/api/users/register', formData);
       console.log(data);
       alert('Registration successful!');
     } catch (error) {
