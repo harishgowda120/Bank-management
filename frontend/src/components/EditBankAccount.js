@@ -20,7 +20,7 @@ const EditBankAccount = () => {
     const fetchAccountDetails = async () => {
       try {
         // Corrected the URL to include a slash before the `id`
-        const { data } = await axios.get(`http://localhost:5000/api/banks/${id}`, {
+        const { data } = await axios.get(`https://bank-management-4tyl.onrender.com/api/banks/${id}`, {
           headers: { Authorization: `Bearer ${auth?.token}` },  // Send the auth token in headers
         });
         setFormData(data);  // Populate the form with the account data
@@ -44,7 +44,7 @@ const EditBankAccount = () => {
     e.preventDefault();
     try {
       // Send PUT request to update the account
-      await axios.put(`http://localhost:5000/api/banks/${id}`, formData, {
+      await axios.put(`https://bank-management-4tyl.onrender.com/api/banks/${id}`, formData, {
         headers: { Authorization: `Bearer ${auth?.token}` },  // Send the auth token
       });
       alert('Account updated successfully!');
