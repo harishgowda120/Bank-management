@@ -14,13 +14,13 @@ const AdminPanel = () => {
       const fetchUsersAndBankAccounts = async () => {
         try {
           // Fetch users
-          const { data } = await axios.get('http://localhost:5000/api/users/users', {
+          const { data } = await axios.get('https://bank-management-4tyl.onrender.com/api/users/users', {
             headers: { Authorization: `Bearer ${auth?.token}` },
           });
           setUsers(data);
 
           // Fetch bank accounts for each user after users are fetched
-          const bankAccountsResponse = await axios.get('http://localhost:5000/api/users/All', {
+          const bankAccountsResponse = await axios.get('https://bank-management-4tyl.onrender.com/api/users/All', {
             headers: { Authorization: `Bearer ${auth?.token}` },
           });
 
