@@ -21,7 +21,7 @@ const AddBankAccount = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/banks/AddAck', formData, {
+      await axios.post('https://bank-management-4tyl.onrender.com/api/banks/AddAck', formData, {
         headers: { Authorization: `Bearer ${auth?.token}` },
       });
       alert('Bank account added successfully!');
