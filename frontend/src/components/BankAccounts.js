@@ -11,7 +11,7 @@ const BankAccounts = () => {
     const fetchAccounts = async () => {
       try {
         if (auth?.token) {
-          const { data } = await axios.get('http://localhost:5000/api/banks/', {
+          const { data } = await axios.get('https://bank-management-4tyl.onrender.com/api/banks/', {
             headers: {
               Authorization: `Bearer ${auth.token}`,
             },
@@ -31,7 +31,7 @@ const BankAccounts = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/banks/${id}`, {
+      await axios.delete(`https://bank-management-4tyl.onrender.com/api/banks/${id}`, {
         headers: { Authorization: `Bearer ${auth?.token}` },
       });
       setAccounts(accounts.filter((account) => account._id !== id));
